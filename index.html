@@ -1,22 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Sarah & Michael - Wedding Invitation</title>
-    <meta name="description" content="Join Sarah and Michael as they celebrate their wedding on June 15th, 2024 at Rose Garden Manor. RSVP and share in their special day filled with love and joy." />
-    <meta property="og:title" content="Sarah & Michael - Wedding Invitation" />
-    <meta property="og:description" content="Join Sarah and Michael as they celebrate their wedding on June 15th, 2024 at Rose Garden Manor. RSVP and share in their special day filled with love and joy." />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Wedding Invitation | Sathyaraj ❤️ Chithra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background-color: #fff0f5;
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+    }
+
+    .envelope-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, -52%); }
+      50% { transform: translate(-50%, -48%); }
+    }
+
+    .envelope {
+      width: 340px;
+      background: #fff5e6;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      position: relative;
+      animation: openEnvelope 2s ease forwards;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    }
+
+    .flap {
+      width: 0;
+      height: 0;
+      border-left: 170px solid transparent;
+      border-right: 170px solid transparent;
+      border-bottom: 100px solid #d4af37;
+      position: absolute;
+      top: -100px;
+      left: 0;
+    }
+
+    @keyframes revealText {
+      to { opacity: 1; }
+    }
+
+    @keyframes floatLetter {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .letter {
+      padding: 20px;
+      opacity: 0;
+      animation: revealText 2s 2s forwards, floatLetter 5s ease-in-out 4s infinite;
+      text-align: center;
+    }
+
+    .header-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: #d40078;
+      margin-bottom: 10px;
+    }
+
+    .subheading, .details p, .footer-msg {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      margin-bottom: 10px;
+    }
+
+    .details p strong {
+      color: #000;
+    }
+
+    .highlight {
+      font-size: 1.1rem;
+      color: #000;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .map-link {
+      color: #d40078;
+      text-decoration: underline;
+      font-weight: bold;
+      display: block;
+      margin: 5px 0 10px;
+    }
+
+    .qr {
+      margin-top: 10px;
+    }
+
+    .qr p {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .qr img {
+      width: 130px;
+      height: 130px;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .qr img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer-msg {
+      margin-top: 12px;
+      color: #000;
+      font-weight: 500;
+    }
+
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    @keyframes openEnvelope {
+      0% { transform: scale(0.5) rotateX(90deg); }
+      100% { transform: scale(1) rotateX(0); }
+    }
+
+    @media (max-width: 400px) {
+      .envelope { width: 300px; }
+      .flap {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+      }
+      .qr img { width: 110px; height: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope-container">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="letter">
+        <h1 class="header-text">Sathyaraj ❤️ Chithra</h1>
+        <p class="subheading">Welcome To Our Wedding</p>
+        <p class="highlight">👇 Tap to view details</p>
+        <p class="highlight">Save The Date</p>
+        <div class="details">
+          <p><strong>📅</strong> 28th August 2025</p>
+          <p><strong>🕕</strong> AT 7 to 9:00 AM</p>
+          <p><strong>📍</strong> SS MAHAL, Ambur Bypass Rd, Kailasagiri</p>
+        </div>
+        <div class="qr">
+          <p>📌 Scan or Tap for Directions</p>
+          <a href="https://maps.app.goo.gl/8dQC7nSYr1ZCQ3Tg8?g_st=iw" target="_blank">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/8dQC7nSYr1ZCQ3Tg8?g_st=iw" alt="Location QR Code">
+          </a>
+        </div>
+        <p class="footer-msg">We look forward to your presence 🙏❤️✨</p>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="particles"></canvas>
+
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 1,
+        alpha: Math.random(),
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212,175,55,${p.alpha})`;
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
 </html>
